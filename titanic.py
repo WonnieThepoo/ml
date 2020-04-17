@@ -3,7 +3,7 @@ import numpy as np
 
 
 
-data = pd.read_csv('data and out/titanic.csv', index_col='PassengerId')
+data = pd.read_csv('/Users/winniethepooh/PycharmProjects/ml/data-out/titanic.csv', index_col='PassengerId')
 passengers = len(data)
 
 """
@@ -12,7 +12,7 @@ passengers = len(data)
 male = (data['Sex'].value_counts()['male'])
 female = len(data) - male
 ans1 = (male, female)
-with open('data and out/1.txt', 'w') as f:
+with open('/Users/winniethepooh/PycharmProjects/ml/data-out/1.txt', 'w') as f:
     f.write(str(male))
     f.write(str(female))
     f.close()
@@ -22,7 +22,7 @@ with open('data and out/1.txt', 'w') as f:
 """
 survived = (data['Survived'].value_counts()[1])
 ans2 = ("%.2f" % (survived/passengers*100))
-with open('data and out/2.txt', 'w') as f:
+with open('/Users/winniethepooh/PycharmProjects/ml/data-out/2.txt', 'w') as f:
     f.write(ans2)
     f.close()
 
@@ -31,7 +31,7 @@ with open('data and out/2.txt', 'w') as f:
 """
 firstclass = (data['Pclass'].value_counts()[1])
 ans3 = ("%.2f" % (firstclass/passengers*100))
-with open('data and out/3.txt', 'w') as f:
+with open('/Users/winniethepooh/PycharmProjects/ml/data-out/3.txt', 'w') as f:
     f.write(ans3)
     f.close()
 
@@ -39,7 +39,7 @@ with open('data and out/3.txt', 'w') as f:
 Средний и медианный возраст
 """
 ans4 = ("%.2f" % data['Age'].mean(), "%.2f" % data['Age'].median())
-with open('data and out/4.txt', 'w') as f:
+with open('/Users/winniethepooh/PycharmProjects/ml/data-out/4.txt', 'w') as f:
     f.write(str(ans4))
     f.close()
 
@@ -47,7 +47,7 @@ with open('data and out/4.txt', 'w') as f:
 Корреляция между двумя колонками
 """
 ans5 = ("%.2f" % data.corr()['SibSp']['Parch'])
-with open('data and out/5.txt', 'w') as f:
+with open('/Users/winniethepooh/PycharmProjects/ml/data-out/5.txt', 'w') as f:
     f.write(str(ans5))
     f.close()
 

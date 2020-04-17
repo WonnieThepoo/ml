@@ -3,7 +3,7 @@ import numpy as np
 import sklearn
 import sklearn.model_selection, sklearn.neighbors, sklearn.preprocessing
 
-data = np.genfromtxt('wine.data', delimiter=',')
+data = np.genfromtxt('/Users/winniethepooh/PycharmProjects/ml/data-out/wine.data', delimiter=',')
 # classes:
 y = data[:, 0]
 # sings:
@@ -18,11 +18,11 @@ for k in range(1, 51):
 
 print('max without scaling :', max(acc), acc.index(max(acc)))
 
-with open('data and out/kNN1.txt', 'w') as f:
+with open('/Users/winniethepooh/PycharmProjects/ml/data-out/kNN1.txt', 'w') as f:
     f.write(str(acc.index(max(acc))))  # index of max accuracy
     f.close()
 
-with open('data and out/kNN2.txt', 'w') as f:
+with open('/Users/winniethepooh/PycharmProjects/ml/data-out/kNN2.txt', 'w') as f:
     f.write(str(max(acc)))  # max accuracy
     f.close()
 
@@ -39,10 +39,10 @@ for k in range(1, 51):
 
 print('max with scaling:', max(acc), acc.index(max(acc)))
 
-with open('data and out/kNN3.txt', 'w') as f:
+with open('/Users/winniethepooh/PycharmProjects/ml/data-out/kNN3.txt', 'w') as f:
     f.write(str(acc.index(max(acc))))   # index of max accuracy
     f.close()
 
-with open('data and out/kNN4.txt', 'w') as f:
+with open('/Users/winniethepooh/PycharmProjects/ml/data-out/kNN4.txt', 'w') as f:
     f.write(str(max(acc)))  # max accuracy
     f.close()

@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 
 #dataframe
-data = pd.read_csv('titanic1.csv', index_col='PassengerId')
+data = pd.read_csv('/data-out/titanic1.csv', index_col='PassengerId')
 data = data.dropna(subset=['Age'])
 
 #replace male - 1, female - 0
@@ -31,7 +31,7 @@ for imp in reversed(importances):
 #importances = str( importances[2]), str( importances[3])
 stri = 'Fare,Sex'
 
-with open('data:out/tree.txt', 'w') as f:
+with open('/data-out/tree.txt', 'w') as f:
     f.write(stri)
     f.close()
 #np.isnan(data['Age'].all())
