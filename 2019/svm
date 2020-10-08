@@ -1,0 +1,19 @@
+import pandas as pd
+import numpy as np
+import sklearn
+from sklearn import svm
+
+
+data = np.genfromtxt('/Users/winniethepooh/PycharmProjects/ml/data-out/svm-data.csv', delimiter=',')
+aim = data[:, 0]
+signs = data[:, 1:]
+
+clf = svm.SVC(C=100000, random_state=241, kernel='linear')  # linear classifier
+clf.fit(X=signs, y=aim)    # learning
+res = str(clf.support_+1)   # support vectors (index+1)
+res = res[1:-1]
+print(res)
+
+with open('/data-out/a_svm.txt', 'w') as f:
+    f.write(res)   # max accuracy
+    f.close()
